@@ -23,13 +23,16 @@ make prod
 ./build/clide-prod --help
 ```
 
-### Future Implementations
+### Rust
 
-Additional language implementations can be added under `langs/`:
-- `langs/rust/` - Rust implementation
-- `langs/python/` - Python implementation
-- `langs/typescript/` - TypeScript/Node.js implementation
-- etc.
+A Rust implementation with the same API and behavior. See [`langs/rust/README.md`](langs/rust/README.md) for details.
+
+**Quick Start:**
+```bash
+cd langs/rust
+cargo build --release
+./target/release/clide-demo --help
+```
 
 ## Specification
 
@@ -50,13 +53,18 @@ All language implementations should conform to this specification.
 │   └── specs/              # Shared specification documentation
 │       └── USAGE.md        # Usage string specification
 ├── langs/                  # Language-specific implementations
-│   └── sml/                # Standard ML implementation
-│       ├── lib/clide/      # Reusable CLI derivation library
-│       ├── src/            # Demo application
-│       ├── test/           # Test suite
-│       ├── mlb/            # MLton basis bundles
-│       ├── Makefile        # Build system
-│       └── Project.toml    # Build configuration
+│   ├── sml/                # Standard ML implementation
+│   │   ├── lib/clide/      # Reusable CLI derivation library
+│   │   ├── src/            # Demo application
+│   │   ├── test/           # Test suite
+│   │   ├── mlb/            # MLton basis bundles
+│   │   ├── Makefile        # Build system
+│   │   └── Project.toml    # Build configuration
+│   └── rust/               # Rust implementation
+│       ├── src/            # Library and demo source
+│       ├── tests/          # Test suite
+│       ├── Cargo.toml      # Rust package configuration
+│       └── README.md       # Rust-specific documentation
 └── LICENSE                 # Project license
 ```
 
