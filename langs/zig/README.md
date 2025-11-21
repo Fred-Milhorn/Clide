@@ -1,6 +1,6 @@
-# Clide — Zig Implementation
+# Clyde — Zig Implementation
 
-A Zig implementation of Clide, a library that turns annotated `Usage:` lines into fully validated command-line parsers.
+A Zig implementation of Clyde, a library that turns annotated `Usage:` lines into fully validated command-line parsers.
 
 ## Overview
 
@@ -55,7 +55,7 @@ pub fn main() !void {
         "Usage: mytool init <path:PATH>",
     };
 
-    var parser = try clide.Clide.fromUsageLines(allocator, &usage);
+    var parser = try clide.Clyde.fromUsageLines(allocator, &usage);
     defer parser.deinit();
 
     var args = try std.process.argsAlloc(allocator);
@@ -70,7 +70,7 @@ pub fn main() !void {
 
 ## API
 
-### `Clide.fromUsageLines(allocator, usage)`
+### `Clyde.fromUsageLines(allocator, usage)`
 
 Parses usage lines and returns a parser struct.
 
@@ -80,13 +80,13 @@ Parses usage lines and returns a parser struct.
 
 **Returns:** A parser struct with a `parse()` method and `deinit()` method.
 
-### `Clide.helpOf(allocator, usage)`
+### `Clyde.helpOf(allocator, usage)`
 
 Renders basic help text from usage lines.
 
 **Returns:** Allocated string (caller must free).
 
-### `Clide.helpWithDocs(allocator, usage, docs)`
+### `Clyde.helpWithDocs(allocator, usage, docs)`
 
 Renders help text with user-provided documentation.
 

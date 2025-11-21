@@ -1,4 +1,4 @@
-"""Clide runtime argument parser"""
+"""Clyde runtime argument parser"""
 
 from typing import List, Tuple, Dict
 from .spec import Spec, Command, Item, Group, Atom, Lit, OptBool, OptVal, Pos, Type

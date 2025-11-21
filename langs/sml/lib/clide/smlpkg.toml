@@ -1,7 +1,7 @@
 [package]
 name = "clide"
 version = "0.1.4"
-description = "Clide: Augmented POSIX Usage -> argv parser for SML"
+description = "Clyde: Augmented POSIX Usage -> argv parser for SML"
 license = "MIT"
 
 [tool.smlpkg]

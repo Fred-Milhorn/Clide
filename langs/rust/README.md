@@ -1,6 +1,6 @@
-# Clide for Rust
+# Clyde for Rust
 
-Rust implementation of Clide, a library that turns annotated `Usage:` lines into fully validated command-line parsers.
+Rust implementation of Clyde, a library that turns annotated `Usage:` lines into fully validated command-line parsers.
 
 ## Overview
 
@@ -18,14 +18,14 @@ This implementation provides a Rust library and demo application that parses com
 ## Usage Example
 
 ```rust
-use clide::Clide;
+use clide::Clyde;
 
 let usage = vec![
     "Usage: mytool [-v|--verbose] serve [--port=INT:8080] [--tls] [--root=PATH] <dir:PATH>".to_string(),
     "Usage: mytool init <path:PATH>".to_string(),
 ];
 
-let parse = Clide::from_usage_lines(&usage)?;
+let parse = Clyde::from_usage_lines(&usage)?;
 let result = parse(&std::env::args().skip(1).collect::<Vec<_>>())?;
 
 match result.command.as_str() {
@@ -85,15 +85,15 @@ clide = "0.1.4"
 
 ## API Reference
 
-### `Clide::from_usage_lines(usage: &[String]) -> Result<Parser, ParseError>`
+### `Clyde::from_usage_lines(usage: &[String]) -> Result<Parser, ParseError>`
 
 Parses usage lines and returns a parser function. The parser takes command-line arguments and returns a `ParseResult`.
 
-### `Clide::help_of(usage: &[String]) -> Result<String, ParseError>`
+### `Clyde::help_of(usage: &[String]) -> Result<String, ParseError>`
 
 Generates help text from usage lines.
 
-### `Clide::help_with_docs(usage: &[String], docs: &[(String, String)]) -> Result<String, ParseError>`
+### `Clyde::help_with_docs(usage: &[String], docs: &[(String, String)]) -> Result<String, ParseError>`
 
 Generates help text with user-provided documentation.
 

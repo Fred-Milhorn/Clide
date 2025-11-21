@@ -1,4 +1,4 @@
-structure ClideTests =
+structure ClydeTests =
 struct
   open Expect
 
@@ -30,7 +30,7 @@ struct
 
   fun testServeParse () =
     let
-      val parse = Clide.fromUsageLines baseUsage
+      val parse = Clyde.fromUsageLines baseUsage
       val result = parse [
         "serve",
         "--port", "9090",
@@ -56,7 +56,7 @@ struct
 
   fun testServeDefaults () =
     let
-      val parse = Clide.fromUsageLines baseUsage
+      val parse = Clyde.fromUsageLines baseUsage
       val result = parse ["serve", "/workdir"]
       val portVals = lookupOption "--port" (#options result)
       val _ = equalStringList (["8080"], List.rev portVals, "default port")
@@ -73,7 +73,7 @@ struct
       val usage = [
         "Usage: build [--include=PATH+] <dir:PATH>"
       ]
-      val parse = Clide.fromUsageLines usage
+      val parse = Clyde.fromUsageLines usage
       val result = parse [
         "--include", "src",
         "--include", "lib",
@@ -88,10 +88,10 @@ struct
 
   fun testUnknownOption () =
     let
-      val parse = Clide.fromUsageLines baseUsage
+      val parse = Clyde.fromUsageLines baseUsage
       val _ = raises (
         fn () => parse ["serve", "--bogus", "/app"],
-        (fn Clide.ArgError _ => true | _ => false),
+        (fn Clyde.ArgError _ => true | _ => false),
         "unknown option"
       )
     in
@@ -100,14 +100,14 @@ struct
 
   fun testSpecError () =
     raises (
-      (fn () => Clide.fromUsageLines ["Usage: tool <unterminated"]),
-      (fn Clide.SpecError _ => true | _ => false),
+      (fn () => Clyde.fromUsageLines ["Usage: tool <unterminated"]),
+      (fn Clyde.SpecError _ => true | _ => false),
       "spec error"
     )
 
   fun testHelpOutput () =
     let
-  val help = Clide.helpWithDocs baseUsage docs
+  val help = Clyde.helpWithDocs baseUsage docs
   val _ = that (String.isSubstring "--port=INT:8080" help, "help includes port docs")
   val _ = that (String.isSubstring "-v" help, "help includes short verbose flag")
   val _ = that (String.isSubstring "--verbose" help, "help includes long verbose flag")

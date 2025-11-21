@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Clide project has been restructured to support multiple language implementations. The Standard ML implementation has been moved to `langs/sml/`, and shared specifications are now at the top level under `docs/specs/`.
+The Clyde project has been restructured to support multiple language implementations. The Standard ML implementation has been moved to `langs/sml/`, and shared specifications are now at the top level under `docs/specs/`.
 
 ## New Structure
 

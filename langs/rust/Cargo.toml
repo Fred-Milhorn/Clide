@@ -2,8 +2,8 @@
 name = "clide"
 version = "0.1.4"
 edition = "2021"
-authors = ["Clide Contributors"]
-description = "Clide: Augmented POSIX Usage -> argv parser for Rust"
+authors = ["Clyde Contributors"]
+description = "Clyde: Augmented POSIX Usage -> argv parser for Rust"
 license = "MIT"
 
 [[bin]]

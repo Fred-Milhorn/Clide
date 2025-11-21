@@ -1,10 +1,10 @@
-# Clide
+# Clyde
 
-Clide is a multi-language library that turns annotated `Usage:` lines into fully validated command-line parsers. Each language implementation provides a consistent API for parsing command-line arguments based on POSIX-style usage specifications.
+Clyde is a multi-language library that turns annotated `Usage:` lines into fully validated command-line parsers. Each language implementation provides a consistent API for parsing command-line arguments based on POSIX-style usage specifications.
 
 ## Overview
 
-Clide provides a specification-driven approach to CLI parsing:
+Clyde provides a specification-driven approach to CLI parsing:
 
 - **Specification at the edge**: CLI shape is recorded once in human-friendly usage strings, then compiled to enforce flags, defaults, and positional arguments at runtime.
 - **Type-aware parsing**: Options and positionals deserialize into typed values (`INT`, `BOOL`, `STR`, `PATH`) immediately, surfacing errors on bad input instead of deferring validation.
@@ -57,7 +57,7 @@ zig build
 
 ## Specification
 
-The core specification for Clide usage strings is documented in [`docs/specs/USAGE.md`](docs/specs/USAGE.md). This specification defines:
+The core specification for Clyde usage strings is documented in [`docs/specs/USAGE.md`](docs/specs/USAGE.md). This specification defines:
 
 - Usage string syntax and semantics
 - Type annotations (`INT`, `BOOL`, `STR`, `PATH`)
