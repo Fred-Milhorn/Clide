@@ -4,7 +4,7 @@
 
 ### Added
 
-- Initial release of **Clide** library.
+- Initial release of **Clyde** library.
 - Converts Augmented POSIX `Usage:` lines into argv parsers.
 - Supports boolean flags and typed options (`INT`, `BOOL`, `STR`, `PATH`), defaults via `:default`, repeatable options with `+`, alternations (`[-v|--verbose]`), typed positionals (`<dir:PATH>`), and pretty `--help` rendering.
 - Includes `lib/clide/clide.mlb` and `smlpkg.toml` for integration.

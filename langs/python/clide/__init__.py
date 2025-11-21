@@ -1,6 +1,6 @@
-"""Clide: Augmented POSIX Usage -> argv parser for Python
+"""Clyde: Augmented POSIX Usage -> argv parser for Python
 
-Clide turns annotated `Usage:` lines into fully validated command-line parsers.
+Clyde turns annotated `Usage:` lines into fully validated command-line parsers.
 """
 
 from typing import List, Tuple, Callable
@@ -10,8 +10,8 @@ from .runtime import ArgError, ParseResult, choose_command, parse_with
 from .help import render, render_with_docs
 
 
-class Clide:
-    """Main Clide API"""
+class Clyde:
+    """Main Clyde API"""
 
     @staticmethod
     def from_usage_lines(usage: List[str]) -> Callable[[List[str]], ParseResult]:
@@ -37,4 +37,4 @@ class Clide:
         return render_with_docs(spec, docs)
 
 
-__all__ = ['Clide', 'ParseError', 'ArgError', 'ParseResult', 'Type']
+__all__ = ['Clyde', 'ParseError', 'ArgError', 'ParseResult', 'Type']

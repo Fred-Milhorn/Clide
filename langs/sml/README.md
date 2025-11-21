@@ -1,6 +1,6 @@
-# Clide for Standard ML
+# Clyde for Standard ML
 
-Standard ML implementation of Clide, a library that turns annotated `Usage:` lines into fully validated command-line parsers.
+Standard ML implementation of Clyde, a library that turns annotated `Usage:` lines into fully validated command-line parsers.
 
 ## Overview
 
@@ -10,7 +10,7 @@ This implementation provides a Standard ML library and demo application that par
 
 - **Specification at the edge**: CLI shape is recorded once in human-friendly usage strings, then compiled to enforce flags, defaults, and positional arguments at runtime.
 - **Type-aware parsing**: Options and positionals deserialize into `INT`, `BOOL`, `STR`, and `PATH` values immediately, surfacing `ArgError` on bad input instead of deferring validation.
-- **Embeddable library**: The parsing engine lives under `lib/clide`, sealed by the `CLI_DERIVE` signature. The demo in `src/Main.sml` shows how to wire `Clide.fromUsageLines` and `Clide.helpWithDocs` into an application.
+- **Embeddable library**: The parsing engine lives under `lib/clide`, sealed by the `CLI_DERIVE` signature. The demo in `src/Main.sml` shows how to wire `Clyde.fromUsageLines` and `Clyde.helpWithDocs` into an application.
 
 ## Usage Example
 
@@ -25,7 +25,7 @@ val docs = [
    ("-v, --verbose", "Verbose logging")
 ]
 
-val parse = Clide.fromUsageLines usage
+val parse = Clyde.fromUsageLines usage
 
 case parse (CommandLine.arguments ()) of
    {command = "serve", options, positionals, leftovers} =>
@@ -91,7 +91,7 @@ end
 Usage in code:
 
 ```sml
-val parse = Clide.fromUsageLines usage
+val parse = Clyde.fromUsageLines usage
 val res = parse (CommandLine.arguments ())
 ```
 

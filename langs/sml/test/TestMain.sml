@@ -20,7 +20,7 @@ struct
 
   fun main () =
     let
-      val results = List.map runTest ClideTests.tests
+      val results = List.map runTest ClydeTests.tests
       val status = summarize results
     in
       OS.Process.exit status

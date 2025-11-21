@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Clide demo application"""
+"""Clyde demo application"""
 
 import sys
-from clide import Clide
+from clide import Clyde
 
 
 def main():
@@ -28,7 +28,7 @@ def main():
 
     if wants_help:
         try:
-            help_text = Clide.help_with_docs(usage, docs)
+            help_text = Clyde.help_with_docs(usage, docs)
             print(help_text)
             sys.exit(0)
         except Exception as e:
@@ -36,7 +36,7 @@ def main():
             sys.exit(1)
 
     try:
-        parse = Clide.from_usage_lines(usage)
+        parse = Clyde.from_usage_lines(usage)
         result = parse(args)
 
         print(f"command: {result.command}")
@@ -56,7 +56,7 @@ def main():
     except Exception as e:
         print(f"Error: {e}\n", file=sys.stderr)
         try:
-            help_text = Clide.help_with_docs(usage, docs)
+            help_text = Clyde.help_with_docs(usage, docs)
             print(help_text)
         except Exception:
             pass

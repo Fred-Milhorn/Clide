@@ -20,7 +20,7 @@ sig
   val helpWithDocs  : string list -> (string * string) list -> string
 end
 
-structure Clide :> CLI_DERIVE =
+structure Clyde :> CLI_DERIVE =
 struct
   structure S = CliSpec
   structure P = CliSpecParser

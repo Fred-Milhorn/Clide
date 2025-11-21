@@ -19,8 +19,8 @@ struct
   fun run () =
     let
       val argv = CommandLine.arguments ()
-      val parse = Clide.fromUsageLines usage
-      val showHelp = fn () => print (Clide.helpWithDocs usage docs)
+      val parse = Clyde.fromUsageLines usage
+      val showHelp = fn () => print (Clyde.helpWithDocs usage docs)
       val wantsHelp = List.exists (fn a => a = "--help" orelse a = "-h") argv
       fun emitResult {command, options, positionals, leftovers} =
         let
@@ -42,9 +42,9 @@ struct
         OS.Process.exit OS.Process.success
       )
     end
-    handle Clide.ArgError msg => (
+    handle Clyde.ArgError msg => (
       print ("Error: " ^ msg ^ "\n\n");
-      print (Clide.helpWithDocs usage docs);
+      print (Clyde.helpWithDocs usage docs);
       OS.Process.exit OS.Process.failure
     )
 end

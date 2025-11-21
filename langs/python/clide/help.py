@@ -1,4 +1,4 @@
-"""Clide help text generator"""
+"""Clyde help text generator"""
 
 from typing import List, Tuple
 from .spec import Spec, Command, Item, Group, Atom, Lit, OptBool, OptVal, Pos, Type

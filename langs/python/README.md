@@ -1,6 +1,6 @@
-# Clide for Python
+# Clyde for Python
 
-Python implementation of Clide, a library that turns annotated `Usage:` lines into fully validated command-line parsers.
+Python implementation of Clyde, a library that turns annotated `Usage:` lines into fully validated command-line parsers.
 
 ## Overview
 
@@ -18,14 +18,14 @@ This implementation provides a Python library and demo application that parses c
 ## Usage Example
 
 ```python
-from clide import Clide
+from clide import Clyde
 
 usage = [
     "Usage: mytool [-v|--verbose] serve [--port=INT:8080] [--tls] [--root=PATH] <dir:PATH>",
     "Usage: mytool init <path:PATH>",
 ]
 
-parse = Clide.from_usage_lines(usage)
+parse = Clyde.from_usage_lines(usage)
 result = parse(sys.argv[1:])
 
 if result.command == "serve":
@@ -96,15 +96,15 @@ python demo.py serve --port 9090 /app
 
 ## API Reference
 
-### `Clide.from_usage_lines(usage: List[str]) -> Callable[[List[str]], ParseResult]`
+### `Clyde.from_usage_lines(usage: List[str]) -> Callable[[List[str]], ParseResult]`
 
 Parses usage lines and returns a parser function. The parser takes command-line arguments and returns a `ParseResult`.
 
-### `Clide.help_of(usage: List[str]) -> str`
+### `Clyde.help_of(usage: List[str]) -> str`
 
 Generates help text from usage lines.
 
-### `Clide.help_with_docs(usage: List[str], docs: List[Tuple[str, str]]) -> str`
+### `Clyde.help_with_docs(usage: List[str], docs: List[Tuple[str, str]]) -> str`
 
 Generates help text with user-provided documentation.
 

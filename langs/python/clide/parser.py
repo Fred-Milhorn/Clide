@@ -1,4 +1,4 @@
-"""Clide usage string parser"""
+"""Clyde usage string parser"""
 
 from typing import List, Tuple, Optional
 from .spec import Spec, Command, Item, Group, Atom, Lit, OptBool, OptVal, Pos, Type

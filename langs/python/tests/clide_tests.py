@@ -1,10 +1,10 @@
-"""Clide tests"""
+"""Clyde tests"""
 
 import unittest
-from clide import Clide, ArgError, ParseError
+from clide import Clyde, ArgError, ParseError
 
 
-class TestClide(unittest.TestCase):
+class TestClyde(unittest.TestCase):
 
     def test_serve_parse(self):
         usage = [
@@ -12,7 +12,7 @@ class TestClide(unittest.TestCase):
             "Usage: mytool init <path:PATH>",
         ]
 
-        parse = Clide.from_usage_lines(usage)
+        parse = Clyde.from_usage_lines(usage)
         result = parse([
             "serve",
             "--port",
@@ -48,7 +48,7 @@ class TestClide(unittest.TestCase):
             "Usage: mytool init <path:PATH>",
         ]
 
-        parse = Clide.from_usage_lines(usage)
+        parse = Clyde.from_usage_lines(usage)
         result = parse(["serve", "/workdir"])
 
         port_vals = next((v for k, v in result.options if k == "--port"), None)
@@ -68,7 +68,7 @@ class TestClide(unittest.TestCase):
             "Usage: build [--include=PATH+] <dir:PATH>",
         ]
 
-        parse = Clide.from_usage_lines(usage)
+        parse = Clyde.from_usage_lines(usage)
         result = parse([
             "--include",
             "src",
@@ -89,7 +89,7 @@ class TestClide(unittest.TestCase):
             "Usage: mytool init <path:PATH>",
         ]
 
-        parse = Clide.from_usage_lines(usage)
+        parse = Clyde.from_usage_lines(usage)
         with self.assertRaises(ArgError) as context:
             parse(["serve", "--bogus", "/app"])
 
@@ -97,7 +97,7 @@ class TestClide(unittest.TestCase):
 
     def test_spec_error(self):
         with self.assertRaises(ParseError):
-            Clide.from_usage_lines(["Usage: tool <unterminated"])
+            Clyde.from_usage_lines(["Usage: tool <unterminated"])
 
     def test_help_output(self):
         usage = [
@@ -116,7 +116,7 @@ class TestClide(unittest.TestCase):
             ("<path:PATH>", "Project directory"),
         ]
 
-        help_text = Clide.help_with_docs(usage, docs)
+        help_text = Clyde.help_with_docs(usage, docs)
         self.assertIn("--port=INT:8080", help_text)
         self.assertIn("-v", help_text)
         self.assertIn("--verbose", help_text)

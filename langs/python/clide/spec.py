@@ -1,4 +1,4 @@
-"""Clide specification data structures"""
+"""Clyde specification data structures"""
 
 from enum import Enum
 from typing import Optional, List, Union

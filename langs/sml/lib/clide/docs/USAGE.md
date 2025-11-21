@@ -1,10 +1,10 @@
-# **Clide — Augmented POSIX Usage → argv parser for SML**
+# **Clyde — Augmented POSIX Usage → argv parser for SML**
 
 Version **v0.1.4**
 
 ## Overview
 
-Clide turns annotated `Usage:` lines into a working, type-aware argv parser for Standard ML (MLton).
+Clyde turns annotated `Usage:` lines into a working, type-aware argv parser for Standard ML (MLton).
 It balances the readability of standard usage with enough structure to auto-derive a parser.
 
 ## Features
@@ -48,7 +48,7 @@ val usage = [
   "Usage: mytool [-v|--verbose] serve [--port=INT:8080] [--tls] [--root=PATH] <dir:PATH>",
   "Usage: mytool init <path:PATH>"
 ]
-val parse = Clide.fromUsageLines usage
+val parse = Clyde.fromUsageLines usage
 val res = parse (CommandLine.arguments ())
 ```
 

@@ -1,8 +1,8 @@
-# Clide AI Guide
+# Clyde AI Guide
 ## Architecture
 - This is a multi-language project. Each language implementation lives under `langs/<language>/`.
-- For Standard ML: `langs/sml/lib/clide/src` houses the library; `langs/sml/src/Main.sml` demonstrates wiring usage lines, docs, and `Clide.fromUsageLines`.
-- `langs/sml/lib/clide/src/Clide.sml` seals `structure Clide` under `signature CLI_DERIVE`, funnelling parse errors to `SpecError` and runtime issues to `ArgError`.
+- For Standard ML: `langs/sml/lib/clide/src` houses the library; `langs/sml/src/Main.sml` demonstrates wiring usage lines, docs, and `Clyde.fromUsageLines`.
+- `langs/sml/lib/clide/src/Clide.sml` seals `structure Clyde` under `signature CLI_DERIVE`, funnelling parse errors to `SpecError` and runtime issues to `ArgError`.
 - Specs flow: Usage lines → `CliSpecParser.fromLines` → `CliSpec.Spec`, then `CliRuntime.chooseCommand`/`parseWith` turns argv into `{command, options, positionals, leftovers}`.
 - Help generation reuses the spec via `CliHelp.renderWithDocs`, which aligns keys and merges user docs.
 
